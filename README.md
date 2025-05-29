@@ -17,11 +17,14 @@ Absolutely—great idea to include that table in the README. Here’s a polished
 
 ### 🧠 Conceptual Mapping
 
-This project builds an interpretable dataset for PCA using thermodynamic simulations. Here’s how standard data analysis concepts map to this simulation:
+This project builds an interpretable dataset for PCA using thermodynamic simulations. Here's how standard data analysis concepts map to this work:
 
-Role	In This Project
-Samples	Chemical species
-Features	Thermodynamic quantities (e.g., energy, entropy, partition function)
+| **Role**     | **In This Project**                                           |
+|--------------|---------------------------------------------------------------|
+| Samples      | Chemical species                                              |
+| Features     | Thermodynamic quantities (e.g., average energy, entropy, Z)   |
+| Labels _(future)_ | Clusters, phases, or behaviors derived from PCA          |
+| Variations _(future)_ | Temperature, chemical potential, energy level structure |
 
 ## 🧪 Motivation
 
