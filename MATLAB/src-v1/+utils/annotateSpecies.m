@@ -1,14 +1,14 @@
-function hTxt = annotateSamples(score, feature, nLabel, ax, varargin)
-%ANNOTATESAMPLES  Put text labels on selected 3-D points.
+function hTxt = annotateSpecies(score, feature, nLabel, ax, varargin)
+%ANNOTATESPECIES  Put text labels on selected 3-D points.
 %
-%   h = ANNOTATESAMPLES(score, feature) labels *all* points
-%   using their row index (N1, N2, …).  Labels are drawn in
+%   h = ANNOTATESPECIES(score, feature) labels *all* points
+%   using their row index (S1, S2, …).  Labels are drawn in
 %   the current axes (gca).
 %
-%   h = ANNOTATESAMPLES(score, feature, nLabel) labels only
+%   h = ANNOTATESPECIES(score, feature, nLabel) labels only
 %   the nLabel highest-feature points.
 %
-%   h = ANNOTATESAMPLES(score, feature, nLabel, ax) draws in
+%   h = ANNOTATESPECIES(score, feature, nLabel, ax) draws in
 %   the axes handle ax.
 %
 %   Extra name–value pairs after ax are passed directly to TEXT,
@@ -24,7 +24,7 @@ function hTxt = annotateSamples(score, feature, nLabel, ax, varargin)
 %     hTxt    vector of handles to the created text objects
 %
 %   Example
-%     annotateSamples(score_P(:,1:3), feature, 5, gca, ...
+%     annotateSpecies(score_P(:,1:3), feature, 5, gca, ...
 %                     'FontSize',10,'Color','k','FontWeight','bold');
 
     %---------------- defaults ------------------------------------------
@@ -41,7 +41,7 @@ function hTxt = annotateSamples(score, feature, nLabel, ax, varargin)
 
     hTxt = gobjects(nLabel,1);
     for k = 1:nLabel
-        i   = idx(k);                       % sample index
+        i   = idx(k);                       % species index
         txt = sprintf('S%d', i);            % label text
 
         hTxt(k) = text(ax, ...
@@ -53,4 +53,38 @@ function hTxt = annotateSamples(score, feature, nLabel, ax, varargin)
     end
 
     if ~holdState, hold(ax,'off'); end
+end
+
+
+function h = draw3DAxes(ax, color)
+%DRAW3DAXES  Draw X-, Y-, and Z-axes through the origin on a 3-D plot.
+%
+%   h = DRAW3DAXES()                draws grey axes in the current axes.
+%   h = DRAW3DAXES(ax)              draws in the specified axes object.
+%   h = DRAW3DAXES(ax, color)       uses RGB color [r g b].
+%
+%   OUTPUT:  h – 3-element vector of line handles [hx, hy, hz].
+
+    % Defaults -----------------------------------------------------------
+    if nargin < 1 || isempty(ax),    ax = gca;                end
+    if nargin < 2 || isempty(color), color = [0.3 0.3 0.3];   end
+
+    % Ensure we don’t overwrite existing hold state
+    holdState = ishold(ax);
+    hold(ax, 'on');
+
+    % Current axis limits
+    xl = xlim(ax);
+    yl = ylim(ax);
+    zl = zlim(ax);
+
+    % Draw lines
+    hx = line(ax, [xl(1) xl(2)], [0 0],    [0 0],    'Color', color);
+    hy = line(ax, [0 0],         [yl(1) yl(2)], [0 0],    'Color', color);
+    hz = line(ax, [0 0],         [0 0],    [zl(1) zl(2)], 'Color', color);
+
+    % Restore previous hold state
+    if ~holdState,  hold(ax,'off');  end
+
+    if nargout,  h = [hx hy hz];  end
 end
