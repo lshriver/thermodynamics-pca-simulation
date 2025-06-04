@@ -10,6 +10,7 @@ We simulate a set of artificial chemical species, each characterized by discrete
 - Boltzmann probabilities
 - Average energy
 - Entropy (optional/coming soon)
+- %-inaccessible 
 
 These features are organized into a dataset suitable for PCA to explore underlying patterns and correlations.
 
@@ -37,8 +38,8 @@ This project serves as a conceptual "curveball" dataset—a synthetic yet physic
 - **Libraries**: None required for base MATLAB implementation
 
 ## 📁 Structure
-`code/       % MATLAB scripts and functions
-latex/      % Overleaf documents or exported PDFs
+`MATLAB/    % MATLAB scripts and functions     
+code/       % python scripts and functions
 notes/      % Conceptual notes, derivations, ideas`
 
 ## 🚀 Next Steps
