@@ -118,12 +118,12 @@ colorbar; colormap cool;
 grid on; hold on;
 
 label_opts_data = {'FontSize', 10, 'Color', 'k', 'FontWeight', 'bold'}
-annotateSpecies(score_P(:,1:3), entropy, 5, gca, label_opts_data{:});
+utils.annotateSpecies(score_P(:,1:3), entropy, 5, gca, label_opts_data{:});
 
 energy_variable_names = arrayfun(@(k)sprintf('$E_{%d}$',k),1:num_levels,'uni',false);
-drawLoadings3D(coeff_P, score_P, [1 2 3], energy_variable_names);
+utils.drawLoadings3D(coeff_P, score_P, [1 2 3], energy_variable_names);
 
-draw3DAxes(gca) % draw x, y, and z axes
+utils.draw3DAxes(gca) % draw x, y, and z axes
 view(135, 30);  % set a nice 3D viewing angle
 hold off
 
@@ -180,11 +180,11 @@ colorbar; colormap cool;
 grid on; hold on;
 
 label_opts_data = {'FontSize', 10, 'Color', 'k', 'FontWeight', 'bold'}
-annotateSpecies(score_X(:,1:3), entropy, 5, gca, label_opts_data{:});
+utils.annotateSpecies(score_X(:,1:3), entropy, 5, gca, label_opts_data{:});
 
 feature_variable_names = {'$\langle E \rangle$', '$S$', '$Z$', '$F$', '$\%\mathrm{NA}$'};
-drawLoadings3D(coeff_X, score_X, [1 2 3], feature_variable_names);
-draw3DAxes(gca) % draw x, y, and z axes
+utils.drawLoadings3D(coeff_X, score_X, [1 2 3], feature_variable_names);
+utils.draw3DAxes(gca) % draw x, y, and z axes
 
 view(135, 30);  % set a nice 3D viewing angle
 hold off
