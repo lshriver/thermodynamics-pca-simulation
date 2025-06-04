@@ -1,54 +1,100 @@
-# Thermodynamic PCA Simulation
+# 🔥 Thermodynamic-PCA Simulation
 
-This project simulates thermodynamic systems with the goal of generating interpretable data for dimensionality reduction using Principal Component Analysis (PCA).
+<p align="center">
+  <img src="docs/banner_heatmap.svg" width="80%">
+</p>
+
+---
 
 ## 📘 Overview
 
-We simulate a set of artificial chemical species, each characterized by discrete energy levels. Using statistical mechanics, we calculate:
+We simulate *n* artificial chemical species, each with *p* discrete energy
+levels *E<sub>ij</sub>* drawn from a chosen distribution.  
+Using textbook statistical-mechanics we compute, per species *i*:
 
-- Canonical partition functions
-- Boltzmann probabilities
-- Average energy
-- Entropy (optional/coming soon)
-- %-inaccessible 
+| Symbol | Meaning | Units |
+| ------ | ------- | ----- |
+| Z      | Canonical partition function              | dimensionless |
+| P<sub>ij</sub> | Boltzmann probability of level *j* | – |
+| ⟨E⟩    | Average energy                           | eV |
+| S      | Entropy (Shannon / Gibbs)                | eV K⁻¹ |
+| F      | Helmholtz free energy                    | eV |
+| %NA    | % “inaccessible” micro-states (`P < 10⁻⁶`)| % |
 
-These features are organized into a dataset suitable for PCA to explore underlying patterns and correlations.
+The resulting feature matrix (species × thermo-features) is then inspected with
+Principal Component Analysis.  A companion 3-D visualiser shows both *scores*
+(points) and *loadings* (vectors) for intuitive interpretation.
 
-Absolutely—great idea to include that table in the README. Here’s a polished version of it with concise column titles, ready for Markdown:
+---
 
-### 🧠 Conceptual Mapping
+## 🧠 Conceptual Mapping
 
-This project builds an interpretable dataset for PCA using thermodynamic simulations. Here's how standard data analysis concepts map to this work:
+|  ML / Data Science Concept |  In This Project                                     |
+| -------------------------- | ---------------------------------------------------- |
+| Samples                    | Chemical species                                     |
+| Features                   | Thermodynamic quantities (⟨E⟩, S, Z, F, %NA)         |
+| Labels (future)            | Phases / clusters revealed by PCA or clustering      |
+| Controlled variations      | Temperature, chemical potential, energy-level shape |
 
-| **Role**     | **In This Project**                                           |
-|--------------|---------------------------------------------------------------|
-| Samples      | Chemical species                                              |
-| Features     | Thermodynamic quantities (e.g., average energy, entropy, Z)   |
-| Labels _(future)_ | Clusters, phases, or behaviors derived from PCA          |
-| Variations _(future)_ | Temperature, chemical potential, energy level structure |
+---
 
-## 🧪 Motivation
+## 🔧 Current Tech Stack
 
-This project serves as a conceptual "curveball" dataset—a synthetic yet physically meaningful system—designed to help understand PCA in the context of thermodynamics and statistical physics. It draws inspiration from applications in biophysics, especially neural systems where energy and entropy play key roles.
+* **Language** MATLAB (R2023a +)  
+  *Python port on the roadmap—see “Future work”.*
+* **Math** Statistical mechanics · Thermodynamics · Linear algebra  
+* **External libs** None beyond base MATLAB (no Toolboxes required)
 
-## 🔧 Tools
+---
 
-- **Language**: MATLAB (Python version may follow)
-- **Math**: Statistical mechanics, thermodynamics, linear algebra
-- **Libraries**: None required for base MATLAB implementation
+## 🚀 Quick Start
 
-## 📁 Structure
-`MATLAB/    % MATLAB scripts and functions     
-code/       % python scripts and functions
-notes/      % Conceptual notes, derivations, ideas`
+```bash
+git clone https://github.com/your-handle/thermo-pca.git
+cd thermo-pca
+sd
+```
 
-## 🚀 Next Steps
+# Launch MATLAB and run the main demo
 
-- Implement entropy calculation
-- Extend to multiple temperatures or chemical potentials
-- Compare synthetic data to real open-access datasets
-- Perform PCA and visualize results
+```
+>> thermo_pca_demo        % or `run("thermo_pca_demo.m")`
+```
+The script will:
+1. Print two summary tables to the Command Window;
+2. Open six publication-ready figures (set the CI env-var to suppress GUIs).
 
-## 👤 Author
 
-This is an ongoing, hands-on learning project. If you're exploring PCA, thermodynamics, or statistical physics, you're welcome to follow along.
+📁 Repository Layout
+```
+.
+├── code/            % MATLAB scripts & functions
+│   └── thermo_pca_demo.m
+├── docs/            % exported figures, SVGs, and extra reading
+├── notes/           % derivations, scratch, future-work ideas
+└── README.md
+```
+Python assets will live in py/ once the port begins.
+
+🛠️ Future Work (Roadmap)
+
+Structured energy spectra
+- harmonic oscillator, double-well, clustered levels
+- compare random vs structured PCA signatures
+Temperature / $\mu$-sweeps to build richer, higher-dimensional datasets
+
+Full Python rewrite
+– NumPy/SciPy + pandas workflow
+– interactive Plotly / Streamlit dashboard for portfolio demos
+– package on PyPI (pip install thermo-pca)
+
+Advanced analytics
+– kernel-PCA, UMAP, clustering
+– information-theoretic measures (KL divergence between species)
+
+Feel free to open issues or PRs for any of the above!
+
+👤 Author & Licence
+
+    L Shriver 
+    Licensed under the MIT Licence. Contributions welcome.
