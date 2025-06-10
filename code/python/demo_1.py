@@ -51,7 +51,7 @@ print("\n=== Derived thermodynamic features ===\n", T_thermo)
 
 # --- 3. Visualize Boltzmann matrix ---
 plt.figure()
-sns.heatmap(P, cmap='summer_r', square=True, cbar=True)
+sns.heatmap(P, cmap='summer_r', square=False, cbar=True)
 plt.xlabel("Energy Level Index j")
 plt.ylabel("Species Index i")
 plt.title("Boltzmann Probability Matrix $P_{ij}$")
