@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import gmean
 from sklearn.decomposition import PCA
-from sklearn.preprocessing improt StandardScaler
+from sklearn.preprocessing import StandardScaler
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
