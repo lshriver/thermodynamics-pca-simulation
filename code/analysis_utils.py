@@ -4,6 +4,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from colormaps import GREEN, BLUE_TO_PINK
 
 # Constants
 kB = 8.617E-5       # Boltzmann constant in eV/K
@@ -30,7 +31,7 @@ def calculate_boltzmann_statistics(E, T, thresh_p=1e-6):
 
     # Entropy (eV/K)
     P_safe = np.maximum(P, np.finfo(float).eps)     # protect against log(0)
-    S = -kB * sum(P * np.log(P_safe), axis=1)
+    S = -kB * np.sum(P * np.log(P_safe), axis=1)
 
     # Helmholtz free energy (eV)
     F = -kB * T * np.log(Z)
@@ -61,14 +62,7 @@ def perform_pca_analysis(data, feature_names):
 def create_3d_scatter(scores, color_values, color_name, title):
     """Create 3D scatter plot with PCA scores"""
 
-    scatter_colorscale = [
-        [0.0, "#00E8FF"],
-        [0.2, "#2FBDF7"],
-        [0.4, "#5E91EE"],
-        [0.6, "#8D66E6"],
-        [0.8, "#BC3ADD"],
-        [1.0, "#EB0FD5"]
-    ]
+    scatter_colorscale = BLUE_TO_PINK
 
     fig = go.Figure(data=go.Scatter3d(
         x=scores[:, 0],
@@ -78,8 +72,9 @@ def create_3d_scatter(scores, color_values, color_name, title):
         marker=dict(
             size=8,
             color=color_values,
-            colorscale='scatter_colorscale',
-            showscale=dict(title=color_name)
+            colorscale=scatter_colorscale,
+            showscale=True,
+            colorbar=dict(title=color_name)
         ),
         text=[f'Species {i+1}' for i in range(len(scores))],
         hovertemplate='<b>%{text}</b><br>' + 
@@ -107,16 +102,7 @@ def create_correlation_heatmap(scores, original_data, var_names, title):
     n_pcs = min(5, scores.shape[1])     # show up to 5 PCs
     n_vars = original_data.shape[1]
 
-    correlation_colorscale = [
-        [0.0, "#ccff33"],
-        [1/7, "#9ef01a"],
-        [2/7, "#70e000"],
-        [3/7, "#38b000"],
-        [4/7, "#008000"],
-        [5/7, "#007200"],
-        [6/7, "#006400"],
-        [1.0, "#004b23"]
-    ]
+    correlation_colorscale = GREEN
 
     corr_matrix = np.zeros((n_vars, n_pcs))
     for i in range(n_vars):
@@ -144,7 +130,7 @@ def create_correlation_heatmap(scores, original_data, var_names, title):
 def create_variance_plot(explained_var, title):
     """Create explained variance plot"""
     fig = go.Figure(data=go.Bar(
-        x=[f'PC{i+1}' for i in range(min(10, len(exlained_var)))],
+        x=[f'PC{i+1}' for i in range(min(10, len(explained_var)))],
         y=explained_var[:10],
         marker_color='#ffea00'
     ))
