@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go 
 from colormaps import *
+import style
 
 from analysis_utils import (
     clr_transform,
@@ -20,6 +21,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+style.load_custom_css()
+style.apply_background("code/static/images/wisp.jpg")
 
 def main():
     st.title("Thermodynamics & PCA Analysis")
