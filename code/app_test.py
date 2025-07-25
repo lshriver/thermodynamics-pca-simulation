@@ -1,19 +1,14 @@
 import streamlit as st
 import base64
 import os
-from pathlib import Path
 
-STREAMLIT_CSS = Path("code/static/style.css")
-
-def load_custom_css():
-    if STREAMLIT_CSS.exists():
-        css = STREAMLIT_CSS.read_text()
-        st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+st.write("Current working directory:", os.getcwd())
+st.write("File exists:", os.path.exists("code/static/images/wisp.jpg"))
 
 def get_img_as_base64(fp: str) -> str:
     with open(fp, "rb") as f:
         return base64.b64encode(f.read()).decode()
-    
+
 def apply_background(image_path: str):
     if os.path.exists(image_path):
         img_b64 = get_img_as_base64(image_path)
@@ -28,3 +23,6 @@ def apply_background(image_path: str):
             }}
             </style>
         """, unsafe_allow_html=True)
+
+apply_background("code/static/images/wisp.jpg")
+st.write("Test background")

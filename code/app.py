@@ -14,6 +14,9 @@ from analysis_utils import (
     create_variance_plot
 )
 
+style.load_custom_css()
+style.apply_background("code/static/images/wisp.jpg")
+
 # Streamlit page configuration
 st.set_page_config(
     page_title="Thermodynamics & PCA Analysis",
@@ -21,8 +24,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-style.load_custom_css()
-style.apply_background("code/static/images/wisp.jpg")
 
 def main():
     st.title("Thermodynamics & PCA Analysis")
