@@ -166,11 +166,11 @@ def main():
         with st.expander("Correlations: Probabilities", expanded=False):
             st.plotly_chart(fig_corr_P, use_container_width=True)
 
-        st.subheader("Correlations: Thermo Features")
-        st.plotly_chart(fig_corr_X, use_container_width=True)
+        with st.expander("Correlations: Thermo Features", expanded=False):
+            st.plotly_chart(fig_corr_X, use_container_width=True)
 
-        st.subheader("Cross-Correlation of PCA Spaces")
-        st.plotly_chart(fig_cross, use_container_width=True)
+        with st.expander("Cross-Correlation of PCA Spaces", expander=False):
+            st.plotly_chart(fig_cross, use_container_width=True)
 
     # Footer
     st.markdown("""
