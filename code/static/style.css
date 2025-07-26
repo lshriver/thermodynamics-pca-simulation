@@ -152,7 +152,7 @@ input[type="text"]::placeholder, textarea::placeholder {
     font-family: 'Aclonica', sans-serif;
 }
 
-.feature-box-content h1 {
+.feature-box-content * {
     font-weight: bold;
     background: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
     -webkit-background-clip: text ;
