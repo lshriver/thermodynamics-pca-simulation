@@ -39,9 +39,9 @@ html, body {
 }
 
 /* === General Text Styling === */
-st.App h1,
-st.App h2,
-st.App h3 {
+st.App h1, h1,
+st.App h2, h2,
+st.App h3, h3 {
     font-weight: bold;
     background: var(--gradient-main);
     -webkit-background-clip: text;
