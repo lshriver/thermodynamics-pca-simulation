@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 import os
-from pathlib import 
+from pathlib import Path
 
 env = os.getenv('APP_ENV', 'remote')     # default to local
 if env == 'remote':
