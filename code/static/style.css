@@ -262,13 +262,13 @@ a:hover {
 
 /* when sidebar is open, show a “←” */
 [data-testid="collapsedControl"]::before {
-  content: "←"; 
+  content: ":left:"; 
   /* or: content: url('/static/my-icons/collapse.svg'); */
 }
 
 /* when sidebar is closed, show a “→” */
 [data-testid="expandedControl"]::before {
-  content: "→";
+  content: ":right:";
   /* or: content: url('/static/my-icons/expand.svg'); */
 }
 
