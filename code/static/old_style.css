@@ -1,0 +1,79 @@
+/* Gradient text styles - THESE TWO SPECIFIC GRADIENTS SHOULD BE USED */
+.gradient_text1 {
+    font-weight: bold !important;
+    background: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb) !important;
+    background-image: -webkit-linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    text-align: center;
+}
+
+.gradient_text2 {
+    font-weight: bold;
+    background: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
+    background-image: -webkit-linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Button Styling */
+.btn, .stButton button, button[kind="primary"] {
+    background-image: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
+    box-shadow: 0 4px 15px 0 rgba(39, 170, 255, 0.5);
+    width: 100%;
+    min-width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    margin: 10px auto;
+    height: 50px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 15px;
+    transition: all .4s ease-in-out;
+    font-family: 'Aclonica', sans-serif;
+    display: block;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+/* Button hover effects */
+.btn:hover, .stButton button:hover, button[kind="primary"]:hover {
+    background-position: 100% 0;
+    background-image: linear-gradient(to right, #00e8ff, #0070eb);
+    filter: brightness(1.1);
+    transition: all .4s ease-in-out;
+}
+
+
+.section h2 {
+    font-weight: bold;
+    background: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-top: 0;
+    font-size: 1.8rem;
+    width: 100%;
+    text-align: center;
+    font-family: 'Aclonica', sans-serif;
+}
+
+.section h3 {
+    font-weight: bold;
+    background: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb) !important;
+    -webkit-background-clip: text ;
+    background-clip: text ;
+    -webkit-text-fill-color: transparent ;
+    color: transparent ;
+    font-size: 1.4rem;
+    text-align: center;
+    font-family: 'Aclonica', sans-serif;
+}

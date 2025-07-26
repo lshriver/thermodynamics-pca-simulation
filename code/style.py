@@ -3,7 +3,7 @@ import base64
 import os
 from pathlib import Path
 
-STREAMLIT_CSS = Path("code/static/style.css")
+STREAMLIT_CSS = Path("pca_projects/thermo_pca/code/static/style.css")
 
 def load_custom_css():
     if STREAMLIT_CSS.exists():

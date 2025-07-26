@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go 
 from colormaps import *
 import style
+import os
 
 from analysis_utils import (
     clr_transform,
@@ -14,8 +15,16 @@ from analysis_utils import (
     create_variance_plot
 )
 
+env = os.getenv('APP_ENV', 'remote')     # default to local
+if env == 'remote':
+    background_path = 'code/static/images/wisp.jpg'
+elif env == 'local':
+    background_path = 'pca_projects/thermo_pca/code/static/images/wisp.jpg'
+else:
+    raise ValueError(f"Unknown enviornment: {env}")
+
 style.load_custom_css()
-style.apply_background("code/static/images/wisp.jpg")
+style.apply_background(background_path)
 
 # Streamlit page configuration
 st.set_page_config(
@@ -56,7 +65,7 @@ def main():
     # -- Tab 1: Overview --
     with tabs[0]:
         st.header("System Overview")
-        c1, c2 = st.columns(2)
+        c1, c2 = st.columns([3, 1])
         # Energy table & heatmap
         with c1:
             st.subheader("Energy Landscape (eV)")
