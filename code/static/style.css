@@ -57,6 +57,16 @@ h4, h5, h6, p, a, span, div, label {
     font-family: 'Aclonica', sans-serif;
 }
 
+/* Smaller metric text */
+.stMetric .stMetricValue,
+.stMetric .stMetricDelta {
+    font-size: 1rem !important;     /* was ~1.5rem default*/
+}
+
+.stMetric .stMetricLabel {
+    font-size: 0.8rem !important;
+}
+
 /* === Tab Styling === */
 [data-testid="stTabls"] > div {
     background-color: rgba(0, 0, 0, 0.6);
@@ -334,11 +344,15 @@ footer {
 
 /* Make plots more visible */
 .stPlot {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.3) !important;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 20px;
     font-family: 'Aclonica', sans-serif;
+}
+
+.stPlot canvas {
+    background: transparent !important;
 }
 
 /* Progress bar styling with gradient */

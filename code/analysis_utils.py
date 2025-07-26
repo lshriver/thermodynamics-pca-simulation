@@ -108,6 +108,7 @@ def create_3d_scatter(scores, color_values, color_name, title,
             zaxis_title='PC3',
             camera=dict(eye=dict(x=1.5, y=1.5, z=1.5))
         ),
+        showlegend=False,
         height=600
     )
 
@@ -138,6 +139,9 @@ def create_correlation_heatmap(scores, original_data, var_names, title):
         title=title,
         xaxis_title='Principal Components',
         yaxis_title='Variables',
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        margin=dict(l=40, r=40, t=40, b=40),
         height=400
     )
 
