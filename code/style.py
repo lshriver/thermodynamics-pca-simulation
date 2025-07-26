@@ -1,9 +1,18 @@
 import streamlit as st
 import base64
 import os
-from pathlib import Path
+from pathlib import 
 
-STREAMLIT_CSS = Path("pca_projects/thermo_pca/code/static/style.css")
+env = os.getenv('APP_ENV', 'remote')     # default to local
+if env == 'remote':
+    BASE_DIR = Path('.')
+elif env == 'local':
+    BASE_DIR = Path('/home/lshriver/projects/myPortfolio/pca_projects/thermo_pca/')
+else:
+    raise ValueError(f"Unknown enviornment: {env}")
+
+STREAMLIT_CSS = BASE_DIR / "code/static/style.css"
+BG_IMAGE = BASE_DIR / "code/static/images/wisp.jpg"
 
 def load_custom_css():
     if STREAMLIT_CSS.exists():
