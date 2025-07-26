@@ -109,6 +109,9 @@ def create_3d_scatter(scores, color_values, color_name, title,
             camera=dict(eye=dict(x=1.5, y=1.5, z=1.5))
         ),
         showlegend=False,
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        margin=dict(l=40, r=40, t=40, b=40),
         height=600
     )
 
