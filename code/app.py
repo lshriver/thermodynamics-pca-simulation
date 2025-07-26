@@ -92,9 +92,12 @@ def main():
         colorscale=GREEN, zmid=0,
         colorbar=dict(title="Correlation")
     ))
-    fig_cross.update_layout(paper_bgcolor='rgba(0,0,0,0)',
+    fig_cross.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        margin=dict(l=40, r=40, t=40, b=40),height=300)
+        margin=dict(l=40, r=40, t=40, b=40)
+        height=300
+    )
 
     # ─── Three columns: 1∶2∶1 ───────────────────────────────────
     col1, col2, col3 = st.columns([1, 2, 1])
