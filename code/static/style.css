@@ -245,33 +245,6 @@ a:hover {
     text-align: left;
 }
 
-/* 1) hide the default arrows */
-[data-testid="collapsedControl"] svg,
-[data-testid="expandedControl"] svg {
-  display: none;
-}
-
-/* 2) inject your own icon/text */
-[data-testid="collapsedControl"]::before,
-[data-testid="expandedControl"]::before {
-  font-size: 1.5rem;
-  color: #14b5ff;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* when sidebar is open, show a “←” */
-[data-testid="collapsedControl"]::before {
-  content: ":left:"; 
-  /* or: content: url('/static/my-icons/collapse.svg'); */
-}
-
-/* when sidebar is closed, show a “→” */
-[data-testid="expandedControl"]::before {
-  content: ":right:";
-  /* or: content: url('/static/my-icons/expand.svg'); */
-}
-
 /* Network Connectivity section styling */
 .sidebar h3, .sidebar h3 span {
     background: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
@@ -476,4 +449,16 @@ button:hover {
     border: 2px solid white;
     box-shadow: 0 0 5px rgba(20, 181, 255, 0.7) ;
     font-family: 'Aclonica', sans-serif;
+}
+
+/* when sidebar is open, show a “←” */
+[data-testid="collapsedControl"]::before {
+  content: "←"; 
+  /* or: content: url('/static/my-icons/collapse.svg'); */
+}
+
+/* when sidebar is closed, show a “→” */
+[data-testid="expandedControl"]::before {
+  content: "→";
+  /* or: content: url('/static/my-icons/expand.svg'); */
 }
