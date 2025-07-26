@@ -34,6 +34,7 @@
     --h1-size: 2rem;
     --h2-size: 1.5rem;
     --h3-size: 1.17rem;
+    --text-color: var(--blue1);
 }
 
 /* Main styling for the entire application */
@@ -43,7 +44,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-html, body {
+html, body, [class*="css"] {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -55,22 +56,41 @@ html, body {
 }
 
 /* === General Text Styling === */
-st.App h1, 
-st.App h2, 
-st.App h3 { 
+h1, h2, h3, h4, h5, h6, p, a, span, div, label {
+    /* */
+    font-family: 'Aclonica', sans-serif;
     font-weight: bold;
-    background: var(--gradient-lime_green-to-blue);
-    -webkit-background-clip: text;
-    background-clip: text;
     color: transparent;
 }
 
-st.App h1 { font-size: var(--h1-size); }
-st.App h2 { font-size: var(--h2-size); }
-st.App h3 { font-size: var(--h3-size); }
+h1 {
+    background: var(--gradient-lime_green-to-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: var(--h1-size);
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+}h2 {
+    background: var(--gradient2) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    text-align: center;
+    font-size: 2rem !important;
+    margin: 2rem 0 1rem !important;
+}
 
-h4, h5, h6, p, a, span, div, label {
-    /* */
+h3 {
+    background: var(--gradient3) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    text-align: center;
+    font-size: 1.5rem !important;
+    margin: 1.5rem 0 1rem !important;
+}
+
+/* Regular text */
+p, div, span, li {
+    color: var(--text-color) !important;
     font-family: 'Aclonica', sans-serif;
 }
 
@@ -369,7 +389,13 @@ footer {
 }
 
 .stPlot canvas {
-    background: transparent !important;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--semi-transparent-bg);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Progress bar styling with gradient */
