@@ -35,17 +35,17 @@ html, body {
 }
 
 /* === General Text Styling === */
-h1, h3, h4, h5, h6, p, a, span, div, label {
-    color: #ffff;
-    font-family: 'Aclonica', sans-serif;
-}
-
-.stApp h2 {
+.stApp h1, .stApp h2, .stApp h3, h1, h2, h3 {
     font-weight: bold;
     background: var(--gradient-main);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+h4, h5, h6, p, a, span, div, label {
+    color: #ffff;
+    font-family: 'Aclonica', sans-serif;
 }
 
 /* === Tab Styling === */
