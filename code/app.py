@@ -150,7 +150,9 @@ def main():
             color_values = color_map[color_choice]
 
             fig_3d_P = create_3d_scatter(scores_P, color_values, color_choice,
-                                         "PCA of Boltzmann Distributions (CLR-transformed)")
+                                         "PCA of Boltzmann Distributions (CLR-transformed)",
+                                         vector_loadings=loadings_P[:5],
+                                         vector_labels=[f'P{i+1}' for i in range(5)])
             
             st.plotly_chart(fig_3d_P, use_container_width=True)
 
@@ -199,7 +201,9 @@ def main():
             color_values = color_map[color_choice]
 
             fig_3d_X = create_3d_scatter(scores_X, color_values, color_choice,
-                                         "PCA of Thermodynamic Features")
+                                         "PCA of Thermodynamic Features",
+                                         vector_loadings=loadings_X,
+                                         vector_labels=['E_avg', 'S', 'Z', 'F', 'Pct_Inacc'])
             st.plotly_chart(fig_3d_X, use_container_width=True)
 
             # Loadings table

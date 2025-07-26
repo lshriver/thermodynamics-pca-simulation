@@ -59,7 +59,8 @@ def perform_pca_analysis(data, feature_names):
 
     return scores, loadings, explained_var, pca
 
-def create_3d_scatter(scores, color_values, color_name, title):
+def create_3d_scatter(scores, color_values, color_name, title,
+                      vector_loadings=None, vector_labels=None):
     """Create 3D scatter plot with PCA scores"""
 
     scatter_colorscale = BLUE_TO_PINK
@@ -83,6 +84,21 @@ def create_3d_scatter(scores, color_values, color_name, title):
                       'PC3: %{z:.3f}<br>' +
                       f'{color_name}: %{{marker.color:.3f}}<extra></extra>'
     ))
+
+    # Add vectors arrows (PCA loadings)
+    if vector_loadings is not None:
+        for i, vec in enumerate(vector_loadings):
+            fig.add_trace(go.Scatter3d(
+                x=[0, vec[0]],
+                y=[0, vec[1]],
+                z=[0, vec[2]],
+                mode='lines+text',
+                line=dict(color='white', width=5),
+                text=[None, vector_labels[i] if vector_labels else f'v{i+1}'],
+                textposition='top center',
+                name=vector_labels[i] if vector_labels else f'v{i+1}'
+            ))
+
 
     fig.update_layout(
         title=title,
