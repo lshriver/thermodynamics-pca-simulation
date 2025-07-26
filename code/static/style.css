@@ -462,3 +462,15 @@ button:hover {
   content: "→";
   /* or: content: url('/static/my-icons/expand.svg'); */
 }
+
+/* when sidebar is open, show a “←” */
+[data-testid="collapsedControl"]::before {
+  content: "←"; 
+  /* or: content: url('/static/my-icons/collapse.svg'); */
+}
+
+/* when sidebar is closed, show a “→” */
+[data-testid="expandedControl"]::before {
+  content: "→";
+  /* or: content: url('/static/my-icons/expand.svg'); */
+}
