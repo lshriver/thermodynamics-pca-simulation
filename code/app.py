@@ -92,12 +92,7 @@ def main():
         colorscale=GREEN, zmid=0,
         colorbar=dict(title="Correlation")
     ))
-    fig_cross.update_layout(
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)',
-        margin=dict(l=40, r=40, t=40, b=40),
-        height=300
-    )
+    fig_cross.update_layout(height=300)
 
     # ─── Three columns: 1∶2∶1 ───────────────────────────────────
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -112,7 +107,12 @@ def main():
             colorscale=BLUE,
             colorbar=dict(title="E (eV)")
         ))
-        figE.update_layout(height=300)
+        figE.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            margin=dict(l=40, r=40, t=40, b=40),
+            height=300
+        )
         st.plotly_chart(figE, use_container_width=True)
 
         st.subheader("Thermodynamic Properties")

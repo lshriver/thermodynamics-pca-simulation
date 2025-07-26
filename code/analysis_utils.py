@@ -99,7 +99,6 @@ def create_3d_scatter(scores, color_values, color_name, title,
                 name=vector_labels[i] if vector_labels else f'v{i+1}'
             ))
 
-
     fig.update_layout(
         title=title,
         scene=dict(
