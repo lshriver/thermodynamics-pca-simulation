@@ -74,7 +74,7 @@ h1 {
 }
 
 h2 {
-    background: var(--gradient2) !important;
+    background: var(--gradient-lime_green-to-blue);
     -webkit-background-clip: text !important;
     background-clip: text !important;
     text-align: center;
