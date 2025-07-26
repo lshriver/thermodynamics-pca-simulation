@@ -12,7 +12,6 @@ else:
     raise ValueError(f"Unknown enviornment: {env}")
 
 STREAMLIT_CSS = BASE_DIR / "code/static/style.css"
-BG_IMAGE = BASE_DIR / "code/static/images/wisp.jpg"
 
 def load_custom_css():
     if STREAMLIT_CSS.exists():
