@@ -2,17 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
 :root {
+    --lime_green: #22f793;
+    --cyan: #00ffee;
     --blue1: #00e8ff;
     --blue2: #14b5ff;
-    --blue3: #3a98ff;
-    --blue4: #0070eb;
+    --blue3:#27aaff;
+    --blue4: #3a98ff;
+    --blue5: #0070eb;
+    --purple1: #7066ff;
+    --purple2: #5e17eb;
     --gradient-main:
         linear-gradient(
             to right bottom,
             var(--blue1),
             var(--blue2),
-            var(--blue3),
-            var(--blue4)
+            var(--blue4),
+            var(--blue5)
+        );
+    --gradient-light-to-dark-blue:
+        linear-gradient(
+            to right bottom, var(--cyan), var(--blue3)
+        ); 
+    --gradient-lime_green-to-blue: 
+        linear-gradient(
+            to right bottom, var(--lime_green), var(--blue3)
         );
     --h1-size: 2rem;
     --h2-size: 1.5rem;
@@ -38,7 +51,7 @@ html, body {
 }
 
 /* === General Text Styling === */
-st.App h1, 
+h1, 
 st.App h2, 
 st.App h3 { 
     font-weight: bold;
@@ -48,7 +61,7 @@ st.App h3 {
     color: transparent;
 }
 
-st.App h1 { font-size: var(--h1-size); }
+h1 { font-size: var(--h1-size); }
 st.App h2 { font-size: var(--h2-size); }
 st.App h3 { font-size: var(--h3-size); }
 
