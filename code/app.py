@@ -163,8 +163,8 @@ def main():
 
     # ─ COLUMN 3: Correlation Heatmaps ─────────────────────────
     with col3:
-        st.subheader("Correlations: Probabilities")
-        st.plotly_chart(fig_corr_P, use_container_width=True)
+        with st.expander("Correlations: Probabilities", expanded=False):
+            st.plotly_chart(fig_corr_P, use_container_width=True)
 
         st.subheader("Correlations: Thermo Features")
         st.plotly_chart(fig_corr_X, use_container_width=True)
@@ -172,5 +172,14 @@ def main():
         st.subheader("Cross-Correlation of PCA Spaces")
         st.plotly_chart(fig_cross, use_container_width=True)
 
+    # Footer
+    st.markdown("""
+        <footer style="text-align: center; margin-top: 100px; margin-bottom: 120px;">
+            <p class="gradient_text2" style="opacity: 1.0; font-size: 1.1rem; padding: 10px; display: inline-block;">
+                © 2025 Lauren Shriver. All rights reserved.
+            </p>
+        </footer>
+    """, unsafe_allow_html=True)
+    
 if __name__ == "__main__":
     main()
