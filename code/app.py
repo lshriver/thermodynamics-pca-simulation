@@ -169,7 +169,7 @@ def main():
         with st.expander("Correlations: Thermo Features", expanded=False):
             st.plotly_chart(fig_corr_X, use_container_width=True)
 
-        with st.expander("Cross-Correlation of PCA Spaces", expander=False):
+        with st.expander("Cross-Correlation of PCA Spaces", expanded=False):
             st.plotly_chart(fig_cross, use_container_width=True)
 
     # Footer
