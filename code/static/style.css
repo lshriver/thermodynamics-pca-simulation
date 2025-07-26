@@ -1,6 +1,21 @@
 /* Main styling for the entire applicaiton */
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
+:root {
+    --primary: #00e8ff;
+    --secondary: #14b5ff;
+    --tertiary: #3a98ff;
+    --primary-dark: #0070eb;
+    --gradient-main:
+        linear-gradient(
+            to right bottom,
+            var(--primary),
+            var(--secondary),
+            var(--tertiary),
+            var(--primary-dark)
+        );
+}
+
 /* Main styling for the entire application */
 * {
     font-family: 'Aclonica', sans-serif !important;
@@ -20,14 +35,17 @@ html, body {
 }
 
 /* === General Text Styling === */
-h1, h2, h3, h4, h5, h6, p, a, span, div, label {
+h1, h3, h4, h5, h6, p, a, span, div, label {
     color: #ffff;
     font-family: 'Aclonica', sans-serif;
 }
 
-.gradient_text {
-    background: linear-gradient(to right bottom, 
-     #00e8ff, #14b5ff, #3a98ff, #0070eb);
+.stApp h2 {
+    font-weight: bold;
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* === Tab Styling === */
