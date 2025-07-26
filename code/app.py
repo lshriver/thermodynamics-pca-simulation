@@ -29,7 +29,7 @@ style.apply_background(background_path)
 
 st.set_page_config(
     page_title="Thermodynamics & PCA Analysis",
-    page_icon=":fire:",
+    page_icon="code/static/images/ember.png",
     layout="wide",
     initial_sidebar_state="expanded"
 )
