@@ -121,7 +121,7 @@ p, div, span, li {
 }
 
 /* Button Styling */
-.btn, .stButton button, button[kind="primary"] {
+.btn, .stButton button, button {
     background-image: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
     box-shadow: 0 4px 15px 0 rgba(39, 170, 255, 0.5);
     width: 100%;
@@ -144,7 +144,7 @@ p, div, span, li {
 }
 
 /* Button hover effects */
-.btn:hover, .stButton button:hover, button[kind="primary"]:hover {
+.btn:hover, .stButton button:hover, button:hover {
     background-position: 100% 0;
     background-image: linear-gradient(to right, #00e8ff, #0070eb);
     filter: brightness(1.1);
