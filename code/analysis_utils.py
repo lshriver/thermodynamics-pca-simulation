@@ -111,7 +111,7 @@ def create_3d_scatter(scores, color_values, color_name, title,
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         margin=dict(l=40, r=40, t=40, b=40),
-        height=600
+        height=400
     )
 
     return fig
