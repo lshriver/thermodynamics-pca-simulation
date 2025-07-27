@@ -2,7 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
 :root {
-    --lime_green: #22f793;
+    --lime_green: #ccff33; 
+    --light_green: #9ef01a;
+    --green1: #70e000;
+    --green2: #38bb00;
+    --green3: #008000;
+    --green4: #007200;
+    --jade_green: #22f793;
     --cyan: #00ffee;
     --blue1: #00e8ff;
     --blue2: #14b5ff;
@@ -23,9 +29,9 @@
         linear-gradient(
             to right bottom, var(--cyan), var(--blue3)
         ); 
-    --gradient-lime_green-to-blue: 
+    --gradient-jade_green-to-blue: 
         linear-gradient(
-            to right bottom, var(--lime_green), var(--blue3)
+            to right bottom, var(--jade_green), var(--blue3)
         );
     --gradient-blue-to-purple: 
         linear-gradient(
@@ -64,7 +70,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, label {
 }
 
 h1 {
-    background: var(--gradient-main);
+    background: var(--gradient-light-to-dark-blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
