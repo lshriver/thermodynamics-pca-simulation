@@ -99,7 +99,7 @@ def main():
 
     # -- Tab 2: Boltzmann Analysis --
     with tabs[1]:
-        st.header("Boltzmann Probability Analysis")
+        st.markdown("<h1 class='gradient_text1'> Boltzmann Probability Analysis </h1>", unsafe_allow_html=True)
         fig_prob = go.Figure(data=go.Heatmap(
             z=P,
             x=[f'Level {i+1}' for i in range(n_levels)],

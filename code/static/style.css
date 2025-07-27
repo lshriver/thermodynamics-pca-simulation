@@ -37,6 +37,10 @@
         linear-gradient(
             to right bottom, var(--blue1), var(--purple2)
         );
+    --gradient-light-to-dark-green: 
+        linear-gradient(
+            to right bottom, var(--light_green), var(--green2), var(--green3), var(--green4)
+        );
     --h1-size: 2rem;
     --h2-size: 1.5rem;
     --h3-size: 1.17rem;
@@ -89,12 +93,33 @@ h2 {
 }
 
 h3 {
-    background: var(--gradient3) !important;
+    background: var(--gradient-light-to-dark-blue) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     text-align: center;
     font-size: 1.5rem !important;
     margin: 1.5rem 0 1rem !important;
+}
+
+.gradient_text1 {
+    font-weight: bold !important;
+    background: var(--gradient-light-to-dark-blue) !important;
+    background-image: -webkit-linear-gradient(to right bottom, var(--cyan), var(--blue5)) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    text-align: center;
+}
+
+.gradient_text2 {
+    font-weight: bold;
+    background: var(--gradient-light-to-dark-green);
+    background-image: -webkit-linear-gradient(to right bottom, var(--light_green), var(--green4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /* Regular text */
@@ -337,17 +362,6 @@ a:hover {
 /* Number inputs */
 [data-testid="stSidebar"] .stNumberInput label {
     text-align: left;
-}
-
-/* Network Connectivity section styling */
-.sidebar h3, .sidebar h3 span {
-    background: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-weight: bold;
-    text-align: center;
 }
 
 /* Slider styling for the active (colored) part */
