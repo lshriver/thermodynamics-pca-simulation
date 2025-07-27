@@ -27,7 +27,7 @@
         );
     --gradient-light-to-dark-blue:
         linear-gradient(
-            to right bottom, var(--cyan), var(--blue3)
+            to right bottom, var(--blue1), var(--blue3)
         ); 
     --gradient-jade_green-to-blue: 
         linear-gradient(
