@@ -514,3 +514,12 @@ button:hover {
     box-shadow: 0 0 5px rgba(20, 181, 255, 0.7) ;
     font-family: 'Aclonica', sans-serif;
 }
+/* Metric Value Style */
+.stMetricValue {
+  color: darkgreen !important;
+  font-size: 1.5em !important;
+}
+.stMetricLabel {
+  color: #555 !important;
+  font-weight: bold !important;
+}
