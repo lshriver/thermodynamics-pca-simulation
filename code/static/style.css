@@ -125,7 +125,6 @@ p, div, span, li {
     background-image: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
     box-shadow: 0 4px 15px 0 rgba(39, 170, 255, 0.5);
     width: 100%;
-    min-width: 200px;
     font-size: 16px;
     font-weight: 600;
     color: white;
