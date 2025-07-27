@@ -93,7 +93,7 @@ def create_3d_scatter(scores, color_values, color_name, title,
                 y=[0, vec[1]],
                 z=[0, vec[2]],
                 mode='lines+text',
-                line=dict(color='white', width=5),
+                line=dict(color='#38b000', width=7.5),
                 text=[None, vector_labels[i] if vector_labels else f'v{i+1}'],
                 textposition='top center',
                 name=vector_labels[i] if vector_labels else f'v{i+1}'
