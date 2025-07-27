@@ -130,7 +130,7 @@ p, div, span, li {
     color: white;
     cursor: pointer;
     margin: 10px auto;
-    height: 5px;
+    height: 3px;
     text-align: center;
     border: none;
     background-size: 300% 100%;
@@ -139,7 +139,7 @@ p, div, span, li {
     font-family: 'Aclonica', sans-serif;
     display: block;
     text-decoration: none;
-    line-height: 5px;
+    line-height: 3px;
 }
 
 /* Button hover effects */
