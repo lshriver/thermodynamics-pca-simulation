@@ -120,23 +120,35 @@ p, div, span, li {
     padding: 15px;
 }
 
-/* === Button Styling === */
-button, .stButton button {
-    background-image: linear-gradient(to right bottom,
-    #00e8ff, #14b5ff, #3a98ff, #0070eb);
-    box-shadow: 0 4px 15px rgba(39, 170, 255, 0.5);
-    border: none;
-    border-radius: 10px;
+/* Button Styling */
+.btn, .stButton button, button[kind="primary"] {
+    background-image: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
+    box-shadow: 0 4px 15px 0 rgba(39, 170, 255, 0.5);
+    width: 100%;
+    min-width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
     cursor: pointer;
-    font-weight: bold;
-    color: #ffff;
-    padding: 5px 10px;
+    margin: 10px auto;
+    height: 50px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 15px;
+    transition: all .4s ease-in-out;
+    font-family: 'Aclonica', sans-serif;
+    display: block;
+    text-decoration: none;
+    line-height: 50px;
 }
 
-button:hover, .stButton button:hover {
+/* Button hover effects */
+.btn:hover, .stButton button:hover, button[kind="primary"]:hover {
     background-position: 100% 0;
     background-image: linear-gradient(to right, #00e8ff, #0070eb);
     filter: brightness(1.1);
+    transition: all .4s ease-in-out;
 }
 
 /* === Input Field Styling === */
