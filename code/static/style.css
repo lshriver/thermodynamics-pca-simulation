@@ -131,16 +131,16 @@ p, div, span, li {
     color: white;
     cursor: pointer;
     margin: 10px auto;
-    height: 50px;
+    height: 5px;
     text-align: center;
     border: none;
     background-size: 300% 100%;
-    border-radius: 15px;
+    border-radius: 5px;
     transition: all .4s ease-in-out;
     font-family: 'Aclonica', sans-serif;
     display: block;
     text-decoration: none;
-    line-height: 50px;
+    line-height: 5px;
 }
 
 /* Button hover effects */
