@@ -122,7 +122,7 @@ def main():
             xaxis_title="Energy Level Index",
             yaxis_title="Species Index",
             showlegend=False,
-            paper_bgcolor='rgba(0,255,255,0.25)',
+            paper_bgcolor='rgba(0,0,0,0)',
             plot_bgcolor='rgba(0,0,0,0)',
             margin=dict(l=40, r=40, t=40, b=40),
             height=400
