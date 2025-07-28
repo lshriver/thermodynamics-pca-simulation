@@ -154,13 +154,16 @@ def create_variance_plot(explained_var, title):
     fig = go.Figure(data=go.Bar(
         x=[f'PC{i+1}' for i in range(min(10, len(explained_var)))],
         y=explained_var[:10],
-        marker_color='#ffea00'
+        marker_color="#f1a009"
     ))
 
     fig.update_layout(
             title=title,
             xaxis_title='Principal Componenet',
             yaxis_title='% Variance Explained',
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            margin=dict(l=40, r=40, t=40, b=40),
             height=400
         )
     

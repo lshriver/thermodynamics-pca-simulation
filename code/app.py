@@ -227,7 +227,7 @@ def main():
             for i in range(min(5, len(cumulative_var))):
                 st.write(f"PC1-PC{i+1}: {cumulative_var[i]:.1f}%")
 
-    # -- Tab 5: COrrelations --
+    # -- Tab 5: Correlations --
     with tabs[4]:
         st.header("Correlation Analysis")
         
@@ -262,6 +262,10 @@ def main():
         ))
         fig_cross.update_layout(
             title="Cross-correlation between PCA Spaces",
+            showlegend=False,
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            margin=dict(l=40, r=40, t=40, b=40),
             height=400
         )
         st.plotly_chart(fig_cross, use_container_width=True)

@@ -136,6 +136,13 @@ p, div, span, li {
 
 .stMetric .stMetricLabel {
     font-size: 0.8rem !important;
+    font-weight: bold;
+    background: var(--gradient-light-to-dark-green);
+    background-image: -webkit-linear-gradient(to right bottom, var(--light_green), var(--green4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /* === Tab Styling === */
@@ -527,13 +534,4 @@ button:hover {
     border: 2px solid white;
     box-shadow: 0 0 5px rgba(20, 181, 255, 0.7) ;
     font-family: 'Aclonica', sans-serif;
-}
-/* Metric Value Style */
-.stMetricValue {
-  color: darkgreen !important;
-  font-size: 1.5em !important;
-}
-.stMetricLabel {
-  color: #555 !important;
-  font-weight: bold !important;
 }
