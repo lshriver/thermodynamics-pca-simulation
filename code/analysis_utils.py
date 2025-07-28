@@ -4,7 +4,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from colormaps import GREEN, BLUE_TO_PINK
+from colormaps import GREEN, BLUE_TO_PINK, PURPLE_TO_ORANGE
 
 # Constants
 kB = 8.617E-5       # Boltzmann constant in eV/K
@@ -93,7 +93,7 @@ def create_3d_scatter(scores, color_values, color_name, title,
                 y=[0, vec[1]],
                 z=[0, vec[2]],
                 mode='lines+text',
-                line=dict(color='#0070eb', width=7.5),
+                line=dict(color='#0f971c', width=7.5),
                 text=[None, vector_labels[i] if vector_labels else f'v{i+1}'],
                 textposition='top center',
                 name=vector_labels[i] if vector_labels else f'v{i+1}'
@@ -154,7 +154,7 @@ def create_variance_plot(explained_var, title):
     fig = go.Figure(data=go.Bar(
         x=[f'PC{i+1}' for i in range(min(10, len(explained_var)))],
         y=explained_var[:10],
-        marker_color="#f1a009"
+        marker_color="#0f971c"
     ))
 
     fig.update_layout(
