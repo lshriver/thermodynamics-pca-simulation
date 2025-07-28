@@ -65,41 +65,51 @@ def main():
     # -- Tab 1: Overview --
     with tabs[0]:
         st.header("System Overview")
-        c1, c2 = st.columns([3, 1])
         # Energy table & heatmap
-        with c1:
-            st.subheader("Energy Landscape (eV)")
-            dfE = pd.DataFrame(E, columns=[f'E{i+1}' for i in range(n_levels)])
-            dfE.index = [f'Species {i+1}' for i in range (n_species)]
-            #st.dataframe(dfE, use_container_width=True)
-            figE = go.Figure(data=go.Heatmap(
-                z=E, x=[f'Level {i+1}' for i in range(n_levels)],
-                y=[f'Species {i+1}' for i in range(n_species)], colorscale=BLUE,
-                colorbar=dict(title='Energy (eV)')
-            ))
-            figE.update_layout(height=400)
-            st.plotly_chart(figE, use_container_width=True)
-        # Thermo features & metrics
-        with c2:
-            st.subheader("Thermodynamic Properties")
-            thermo_df = pd.DataFrame({
-                'Species': [f'S{i+1}' for i in range(n_species)],
-                'AvgE (eV)': mean_E,
-                'Entropy (eV/K)': S,
-                'Z': Z,
-                'F (eV)': F,
-                'PctInacces (%)': pct_inacc
-            })
-            #st.dataframe(thermo_df, use_container_width=True)
+        st.subheader("Energy Landscape (eV)")
+        dfE = pd.DataFrame(E, columns=[f'E{i+1}' for i in range(n_levels)])
+        dfE.index = [f'Species {i+1}' for i in range (n_species)]
+        #st.dataframe(dfE, use_container_width=True)
+        figE = go.Figure(data=go.Heatmap(
+            z=E, x=[f'Level {i+1}' for i in range(n_levels)],
+            y=[f'Species {i+1}' for i in range(n_species)], colorscale=BLUE,
+            colorbar=dict(title='Energy (eV)')
+        ))
+        figE.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            margin=dict(l=40, r=40, t=40, b=40),
+            height=400
+        )
+        st.plotly_chart(figE, use_container_width=True)
 
-            # System statistics
+        # Thermo features & metrics
+        st.subheader("Thermodynamic Properties")
+
+        # System statistics
+        col1, col2, col3 = st.columns(3)
+        with col1:
             st.metric("Temperature", f"{T} K")
+        with col2:
             st.metric("Average Entropy", f"{np.mean(S):.6f} eV/K")
+        with col3:
             st.metric("Average Free Energy", f"{np.mean(F):.3f} eV")
+
+        thermo_df = pd.DataFrame({
+            'Species': [f'S{i+1}' for i in range(n_species)],
+            'AvgE (eV)': mean_E,
+            'Entropy (eV/K)': S,
+            'Z': Z,
+            'F (eV)': F,
+            'PctInacces (%)': pct_inacc
+        })
+        st.dataframe(thermo_df, use_container_width=True)
+
+        
 
     # -- Tab 2: Boltzmann Analysis --
     with tabs[1]:
-        st.markdown("<h1 class='gradient_text1'> Boltzmann Probability Analysis </h1>", unsafe_allow_html=True)
+        st.header("Boltzmann Probability Analysis")
         fig_prob = go.Figure(data=go.Heatmap(
             z=P,
             x=[f'Level {i+1}' for i in range(n_levels)],
@@ -108,10 +118,14 @@ def main():
             colorbar=dict(title='Probability')
         ))
         fig_prob.update_layout(
-            title="Boltzmann Probabillity Matrix",
+            title="Boltzmann Probability Matrix",
             xaxis_title="Energy Level Index",
             yaxis_title="Species Index",
-            height=500
+            showlegend=False,
+            paper_bgcolor='rgba(0,255,255,0.25)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            margin=dict(l=40, r=40, t=40, b=40),
+            height=400
         )
         st.plotly_chart(fig_prob, use_container_width=True)
 
@@ -263,7 +277,7 @@ def main():
         fig_cross.update_layout(
             title="Cross-correlation between PCA Spaces",
             showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(42,173,255,0.25)',
             plot_bgcolor='rgba(0,0,0,0)',
             margin=dict(l=40, r=40, t=40, b=40),
             height=400

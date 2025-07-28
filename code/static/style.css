@@ -27,7 +27,7 @@
         );
     --gradient-light-to-dark-blue:
         linear-gradient(
-            to right bottom, var(--cyan), var(--blue5)
+            to right bottom, var(--blue1), var(--blue5)
         ); 
     --gradient-jade_green-to-blue: 
         linear-gradient(
@@ -438,6 +438,8 @@ footer {
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.stPlotly
 
 /* Progress bar styling with gradient */
 .stProgress > div > div > div {
